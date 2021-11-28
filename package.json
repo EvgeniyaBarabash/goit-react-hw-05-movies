@@ -31,7 +31,7 @@
   },
   "author": "Evgeniya Barabash <barabash1989@gmail.com>",
   "bugs": {
-    "url": "https://github.com/EvgeniyaBarabash/goit-react-hw-05-movies/issues"
+    "url": "https://github.com/EvgeniyaBarabash/goit-react-hw-05-movies.git/issues"
   },
   "homepage": "https://EvgeniyaBarabash.github.io/goit-react-hw-05-movies",
   "eslintConfig": {
