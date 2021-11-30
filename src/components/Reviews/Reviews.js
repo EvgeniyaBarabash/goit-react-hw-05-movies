@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import * as movieAPI from '../services/movie-api';
+import * as movieAPI from '../../services/movie-api';
 import { useParams } from 'react-router';
 
 export default function Reviews() {
@@ -17,7 +17,7 @@ export default function Reviews() {
   );
   return (
     <>
-      {reviews && (
+      {reviews.length>0 ? (
         <ul>
           {reviews.map(rewiew => (
             <li key={reviews.id}>
@@ -26,7 +26,7 @@ export default function Reviews() {
             </li>
           ))}
         </ul>
-      )}
+      ):(<p>We don't have any reviews for this movie </p>)}
     </>
   );
 }

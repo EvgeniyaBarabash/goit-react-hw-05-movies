@@ -34,6 +34,7 @@ export default function MovieDetailsPage() {
             alt={movie.title || movie.name}
           />
           <h2>{movie.title || movie.name}</h2>
+          <p>Year: {(movie.release_date).slice(0,4)}</p>
           <h3>Genres</h3>
           <p>
             {movie.genres.map(genre => {

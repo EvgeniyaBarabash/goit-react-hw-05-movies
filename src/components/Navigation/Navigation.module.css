@@ -9,7 +9,7 @@
 
 .activeLink {
   composes: link;
-  color: #2196f3;
+  color: #ff6b08;
 }
 .nav {
   border-bottom: 1px solid black;
