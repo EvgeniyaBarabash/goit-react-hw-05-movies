@@ -12,4 +12,5 @@ export default function Container({ title, children }) {
 }
 Container.propTypes = {
   title: PropTypes.string,
+  children: PropTypes.node,
 };

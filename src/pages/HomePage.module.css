@@ -1,7 +1,7 @@
 .list {
   display: grid;
   max-width: calc(100vw - 48px);
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, 320px);
   grid-gap: 30px;
   margin-top: 0;
   margin-bottom: 30px;
@@ -9,10 +9,12 @@
   list-style: none;
   margin-left: auto;
   margin-right: auto;
+  align-items: center;
+  justify-content: center;
 }
-@media screen (min-width: 640px), (max-width: 970px) {
+@media screen and (min-width: 640px) and (max-width: 970px) {
   .list {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 294px);
   }
 }
 @media screen and (max-width: 639.99px) {
@@ -22,7 +24,7 @@
 }
 
 .image {
-  width: 100%;
+  max-width: 100%;
   height: 260px;
   object-fit: cover;
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -46,6 +48,8 @@
   text-decoration: none;
 }
 .item {
+  display: flex;
+  justify-content: center;
   overflow: hidden;
   transform: scale(1);
   border-radius: 7px;

@@ -7,6 +7,7 @@ import Reviews from 'components/Reviews/Reviews';
 import { Link } from 'react-router-dom';
 import Button from 'components/Button/Button';
 import { useNavigate } from 'react-router-dom';
+import s from './MovieDetailsPage.module.css';
 export default function MovieDetailsPage() {
   const [movie, setMovie] = useState(null);
   const { movieId } = useParams();
@@ -28,22 +29,26 @@ export default function MovieDetailsPage() {
     <>
       <Button type={'button'} children={'Go back'} onClick={handleClick} />
       {movie && (
-        <>
-          <img
-            src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
-            alt={movie.title || movie.name}
-          />
-          <h2>{movie.title || movie.name}</h2>
-          <p>Year: {(movie.release_date).slice(0,4)}</p>
-          <h3>Genres</h3>
-          <p>
-            {movie.genres.map(genre => {
-              return `${genre.name}`;
-            })}
-          </p>
-          <h3>Overview</h3>
-          <p>{movie.overview}</p>
-        </>
+        <div className={s.wrapper}>
+          <div className={s.img}>
+            <img
+              src={`https://image.tmdb.org/t/p/w342/${movie.poster_path}`}
+              alt={movie.title || movie.name}
+            />
+          </div>
+          <div className={s.content}>
+            <h2>{movie.title || movie.name}</h2>
+            <p>Year: {movie.release_date.slice(0, 4)}</p>
+            <h3>Genres</h3>
+            <p>
+              {movie.genres.map(genre => {
+                return `${genre.name}`;
+              })}
+            </p>
+            <h3>Overview</h3>
+            <p>{movie.overview}</p>
+          </div>
+        </div>
       )}
       <div>
         <h3>Additional information</h3>

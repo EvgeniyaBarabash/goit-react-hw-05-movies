@@ -1,0 +1,10 @@
+.wrapper {
+  display: flex;
+}
+.img {
+  margin-right: 20px;
+  width: 300px;
+}
+.content {
+  width: 50%;
+}
