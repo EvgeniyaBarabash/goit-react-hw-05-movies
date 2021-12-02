@@ -27,7 +27,12 @@ export default function MovieDetailsPage() {
   };
   return (
     <>
-      <Button type={'button'} children={'Go back'} onClick={handleClick} />
+      <Button
+        type={'button'}
+        children={'Go back'}
+        onClick={handleClick}
+        aria-label="Go back"
+      />
       {movie && (
         <div className={s.wrapper}>
           <div className={s.img}>

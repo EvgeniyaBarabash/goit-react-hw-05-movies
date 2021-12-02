@@ -11,9 +11,15 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Loading from 'components/Loading/Loading';
 
-const HomePage = lazy(()=>import('pages/HomePage'/* webpackChunkName: "home-page" */));
-const MovieDetailsPage=lazy(()=>import('pages/MovieDetailsPage'/* webpackChunkName: "movieDetails-page" */));
-const MoviesPage=lazy(()=>import('pages/MoviesPage'/* webpackChunkName: "movie-page" */));
+const HomePage = lazy(() =>
+  import('pages/HomePage' /* webpackChunkName: "home-page" */),
+);
+const MovieDetailsPage = lazy(() =>
+  import('pages/MovieDetailsPage' /* webpackChunkName: "movieDetails-page" */),
+);
+const MoviesPage = lazy(() =>
+  import('pages/MoviesPage' /* webpackChunkName: "movie-page" */),
+);
 
 export default function App() {
   return (
@@ -21,12 +27,12 @@ export default function App() {
       <Container>
         <AppBar />
         <ToastContainer autoClose={3000} />
-        <Suspense fallback={<Loading/>}>
-        <Routes>
-          <Route path="/*" element={<HomePage />} />
-          <Route path="/movies/:movieId/*" element={<MovieDetailsPage />} />
-          <Route path="/movies/*" element={<MoviesPage />} />
-        </Routes>
+        <Suspense fallback={<Loading />}>
+          <Routes>
+            <Route path="/*" element={<HomePage />} />
+            <Route path="/movies/:movieId/*" element={<MovieDetailsPage />} />
+            <Route path="/movies/*" element={<MoviesPage />} />
+          </Routes>
         </Suspense>
       </Container>
     </>

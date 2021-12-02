@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import * as movieAPI from '../../services/movie-api';
 import { useParams } from 'react-router';
+import defaultImage from 'images/defaultImage.jpg';
 import s from './Cast.module.css';
 export default function Cast() {
   const [cast, setCast] = useState([]);
@@ -23,7 +24,11 @@ export default function Cast() {
             <li key={actor.id} className={s.item}>
               <img
                 className={s.img}
-                src={`https://image.tmdb.org/t/p/w342/${actor.profile_path}`}
+                src={
+                  actor.profile_path
+                    ? `https://image.tmdb.org/t/p/w342/${actor.profile_path}`
+                    : defaultImage
+                }
                 alt={actor.name}
               />
               <p className={s.text}>{actor.name}</p>

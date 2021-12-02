@@ -1,10 +1,9 @@
 import { useState } from 'react';
 import s from './Searchbar.module.css';
-import { ToastContainer } from 'react-toastify';
+import { ReactComponent as SearchIcon } from 'images/icons/search.svg';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import PropTypes from 'prop-types';
-import Button from 'components/Button/Button';
 export default function SearchBar({ onSubmit }) {
   const [query, setQuery] = useState('');
 
@@ -21,24 +20,24 @@ export default function SearchBar({ onSubmit }) {
     setQuery('');
   };
   return (
-    <form className={s.form} onSubmit={handleSubmit}>
-      <Button
-        className={s.btn}
-        type={'submit'}
-        children={'Search'}
-        aria-label="Search"
-      />
+    <div className={s.Searchbar}>
+      <form className={s.form} onSubmit={handleSubmit}>
+        <button type="submit" className={s.button}>
+          <SearchIcon width="32" />
+          <span className={s.buttonLabel}>Search</span>
+        </button>
 
-      <input
-        className={s.input}
-        type="text"
-        autoComplete="off"
-        value={query}
-        autoFocus
-        placeholder="Search movies"
-        onChange={handleQueryChange}
-      />
-    </form>
+        <input
+          className={s.input}
+          type="text"
+          autoComplete="off"
+          value={query}
+          autoFocus
+          placeholder="Search movies"
+          onChange={handleQueryChange}
+        />
+      </form>
+    </div>
   );
 }
 SearchBar.propTypes = {
