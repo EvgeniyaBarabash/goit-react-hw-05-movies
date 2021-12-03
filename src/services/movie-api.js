@@ -10,7 +10,7 @@ async function fetchWithErrorHandling(url = '', config = {}) {
 
 export function fetchSearch({query}) {
   return fetchWithErrorHandling(
-    `${BASE_URL}/search/movie/?query=${query}&api_key=${API_KEY}&language=en-US&page=1&include_adult=false`,
+    `${BASE_URL}/search/movie?query=${query}&api_key=${API_KEY}&language=en-US&page=1&include_adult=false`,
   );
 }
 
